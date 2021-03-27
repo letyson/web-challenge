@@ -1,0 +1,38 @@
+<div *ngIf="character" class="edit-character">
+  <h2>Edit</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="title">Name</label>
+      <input
+        #name
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="character.name"
+        value="{{ character.name }}"
+        name="name"
+        (keyup)="sendName($event)"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Location</label>
+      <input
+        #location
+        type="text"
+        class="form-control"
+        id="location"
+        [(ngModel)]="character.location.name"
+        (ngModelChange)="modelChangeLocation($event)"
+        value="{{ character.location.name }}"
+        name="location"
+        (keyup)="sendLocation($event)"
+      />
+    </div>
+  </form>
+
+  <button class="btn button--ok" (click)="updateCharacter(true)">Update</button>
+  <button type="reset" class="btn button--reset" (click)="reset()">
+    Reset
+  </button>
+</div>

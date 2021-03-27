@@ -1,0 +1,17 @@
+<div class="episodes-list">
+  <h1>Episodes</h1>
+  <div class="grid">
+    <div *ngFor="let episode of episodes">
+      <div class="card">
+        <p><b>Episode: </b>{{ episode.episode }}</p>
+        <p><b>Name: </b>{{ episode.name }}</p>
+        <p><b>Air date: </b>{{ episode.air_date | date }}</p>
+      </div>
+    </div>
+  </div>
+  <!--   <div class="pagination">
+    <button>Previuos</button>
+    <button (click)="nextPage()">Next</button>
+  </div> -->
+  <!-- <pagination-controls (pageChange)="pageNum = $event"></pagination-controls> -->
+</div>

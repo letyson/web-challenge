@@ -3,6 +3,14 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths":{
+      "@app/*":["src/app/*"],
+      "@assets/*":["src/assets/*"],
+      "@shared/*":["src/app/shared/*"],
+      "@environment/*":["src/environments/*"],
+      "@characters/*":["src/app/components/pages/characters/*"],
+      "@pages/*":["src/app/components/pages/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -16,5 +24,6 @@
       "es2018",
       "dom"
     ]
-  }
+  },
+
 }

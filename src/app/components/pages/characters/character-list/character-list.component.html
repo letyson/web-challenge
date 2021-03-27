@@ -1,0 +1,32 @@
+<div class="characters-list">
+  <app-alert></app-alert>
+  <!-- <app-alert [message]="message"></app-alert> -->
+  <h1>Characters</h1>
+  <div
+    class="list-container"
+    *ngFor="let character of characters; let i = index"
+    (click)="setActiveCharacter($event, character, i)"
+  >
+    <div class="card">
+      <div class="image">
+        <img [src]="character.image" [alt]="character.name" />
+      </div>
+      <div class="card-info">
+        <h4>{{ character.name }}</h4>
+        <p>{{ character.location.name }}</p>
+
+        <app-badge [status]="character.status"></app-badge>
+      </div>
+    </div>
+    <div
+      *ngIf="currentCharacter && i == getCurrentIndex() - 1"
+      class="character-details"
+      [id]="i"
+    >
+      <app-character-item
+        [character]="character"
+        (messageEvent)="receiveMessage($event)"
+      ></app-character-item>
+    </div>
+  </div>
+</div>

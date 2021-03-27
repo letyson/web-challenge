@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrlAPI: 'https://rickandmortyapi.com/api/',
+  customUrlAPI: 'http://grainchain-api.test/api/v1/'
 };
